@@ -17,7 +17,7 @@ then
 echo $Fichier >> recup3
 echo "$var" >> recup3
 fi
-done
+doneLOL
 
 #aircrack-ng -w $2 $1
 #aircrack-ng -w $3 $1

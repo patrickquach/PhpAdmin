@@ -147,7 +147,7 @@ function display ()
   for ($i = 0; $i <= 23; $i++)
     echo " ";
   echo "|   x^2     1/(1+x)   e^x     sin(x)    \n";
-  echo "Valeur RÃ©elle        ".$primX2."    ".$primDiv."     ".$primEx."     ".$primSin."\n";
+  echo "Valeur Réelle        ".$primX2."    ".$primDiv."     ".$primEx."     ".$primSin."\n";
  }
 
 function calPrimitives ()
@@ -179,7 +179,6 @@ function calPrimitives ()
   echo $primDiv."\n";
   echo $primEx."\n";
   echo $primSin."\n";
-  display();
-  
+  display(); 
 }
 calPrimitives();

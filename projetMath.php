@@ -6,7 +6,7 @@
 // Login   <lecler_s@etna-alternance.net>
 // 
 // Started on  Mon Dec 30 14:48:23 2013 Steven Leclerc
-// Last update Wed Jan  8 14:03:24 2014 Steven Leclerc
+// Last update Wed Jan  8 14:24:52 2014 Steven Leclerc
 //
 
    //Phase 2.1
@@ -141,45 +141,24 @@ return $result;
 }
 function display ()
 {
-  for ($i = 0; $i <= 63; $i++)
-    echo "-";
-  echo "\n";
-  for ($i = 0; $i <= 23; $i++)
-    echo " ";
-  echo "|   x^2     1/(1+x)   e^x     sin(x)    \n";
-  echo "Valeur Réelle        ".$primX2."    ".$primDiv."     ".$primEx."     ".$primSin."\n";
- }
-
-function calPrimitives ()
-{
   $a = 1;
   $b = 2;
   $nbSub = 20;
-  echo  MethodeRectangle($a, $b, $nbSub, 1)."\n";
-  echo  MethodeRectangle($a, $b, $nbSub, 2)."\n";
-  echo  MethodeRectangle($a, $b, $nbSub, 3)."\n";
-  echo  MethodeRectangle($a, $b, $nbSub, 4)."\n";
-  echo "\n";
-  echo  MethodeTrapeze($a, $b, $nbSub, 1)."\n";
-  echo  MethodeTrapeze($a, $b, $nbSub, 2)."\n";
-  echo  MethodeTrapeze($a, $b, $nbSub, 3)."\n";
-  echo  MethodeTrapeze($a, $b, $nbSub, 4)."\n";
-  echo "\n";
-  echo MethodeSimpson($a, $b, $nbSub, 1)."\n";
-  echo MethodeSimpson($a, $b, $nbSub, 2)."\n";
-  echo MethodeSimpson($a, $b, $nbSub, 3)."\n";
-  echo MethodeSimpson($a, $b, $nbSub, 4)."\n";
-  echo "\n";
 
   $primX2 = calPrimX2($a, $b);
   $primDiv = calPrimDiv($a, $b);
   $primEx = calPrimEx($a, $b);
   $primSin = calPrimSin($a, $b);
-  echo $primX2."\n";
-  echo $primDiv."\n";
-  echo $primEx."\n";
-  echo $primSin."\n";
-  display();
-  
+  for ($i = 0; $i <= 100; $i++)
+    echo "-";
+  echo "\n";
+  for ($i = 0; $i <= 23; $i++)
+    echo " ";
+  echo "x^2               1/(1+x)               e^x               sin(x)    \n";
+  echo "Valeur Réelle     ".$primX2."    ".$primDiv."     ".$primEx."     ".$primSin."\n";
+  echo "Methode Rectangle ".MethodeRectangle($a, $b, $nbSub, 1)."            ".MethodeRectangle($a, $b, $nbSub, 2)."      ".MethodeRectangle($a, $b, $nbSub, 3)."     ".MethodeRectangle($a, $b, $nbSub, 4)."\n";
+  echo "Methode Trapeze   ".MethodeTrapeze($a, $b, $nbSub, 1)."            ".MethodeTrapeze($a, $b, $nbSub, 2)."     ".MethodeTrapeze($a, $b, $nbSub, 3)."     ".MethodeTrapeze($a, $b, $nbSub, 4)."\n";
+  echo "Methode Simpson   ".MethodeSimpson($a, $b, $nbSub, 1)."    ".MethodeSimpson($a, $b, $nbSub, 2)."     ".MethodeSimpson($a, $b, $nbSub, 3)."     ".MethodeSimpson($a, $b, $nbSub, 4)."\n\n";
 }
-calPrimitives();
+
+display();
